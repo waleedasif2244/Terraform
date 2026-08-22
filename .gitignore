@@ -1,0 +1,12 @@
+# Terraform state files (contain sensitive data)
+*.tfstate
+*.tfstate.backup
+
+# Local .terraform directory
+.terraform/
+
+# Credentials file - contains your AWS keys
+terraform.tfvars
+
+# Crash log files
+crash.log
