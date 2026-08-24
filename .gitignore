@@ -10,3 +10,6 @@ terraform.tfvars
 
 # Crash log files
 crash.log
+# SSH private keys - DO NOT COMMIT
+tf_ec2_key
+tf_ec2_key.pub
