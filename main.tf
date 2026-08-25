@@ -30,3 +30,29 @@ resource "aws_key_pair" "waleed_key" {
   key_name   = "waleed-key"
   public_key = file("${path.module}/tf_ec2_key.pub")
 }
+
+
+output "ec2_public_ip" {
+  value=aws_instance.web.public_ip
+}
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
