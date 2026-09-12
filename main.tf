@@ -19,7 +19,7 @@ resource "aws_instance" "web" {
     instance_type ="t2.micro"
     key_name      = "waleed-key"
     vpc_security_group_ids = [aws_security_group.sg.id]
-    user_data = >>EOF
+    user_data = <<EOF
       #!/bin/bash
       export JAVA_HOME="/usr/lib/jvm/jre"
       yum update -y
