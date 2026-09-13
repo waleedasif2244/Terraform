@@ -15,6 +15,7 @@ resource "aws_vpc" "waleed_vpc" {
 # creating ec2
 
 resource "aws_instance" "web" {
+    count = 3 
     ami = "ami-0c7217cdde317cfec"
     instance_type ="t2.micro"
     key_name      = "waleed-key"
@@ -31,6 +32,15 @@ resource "aws_instance" "web" {
       curl localhost
       EOF
 
+    root_block_devie{
+     volume size = 11
+     encrypted = true
+
+    }
+
+
+
+
     tags={
       Name = "waleed_instance" 
       Environment= "DEV"
@@ -45,7 +55,7 @@ resource "aws_key_pair" "waleed_key" {
 
 
 output "ec2_public_ip" {
-  value=aws_instance.web.public_ip
+  value=aws_instance.web.*.public_ip
 }
 
 
