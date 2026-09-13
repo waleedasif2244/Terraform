@@ -32,14 +32,10 @@ resource "aws_instance" "web" {
       curl localhost
       EOF
 
-    root_block_devie{
-     volume size = 11
-     encrypted = true
-
+    root_block_device {
+      volume_size = 11
+      encrypted   = true
     }
-
-
-
 
     tags={
       Name = "waleed_instance" 
