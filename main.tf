@@ -21,7 +21,7 @@ resource "aws_instance" "web" {
     key_name      = "waleed-key"
     vpc_security_group_ids = [aws_security_group.sg.id]
     user_data = <<EOF
-      #!/bin/bash
+      #!/bin/bash    
       export JAVA_HOME="/usr/lib/jvm/jre"
       yum update -y
       #yum install tomcat9 tomcat9-webapps java-1.8.0-openjdk java-1.8.0-openjdk-devel java-1.8.0-openjdk-javadoc mariadb-server -y
@@ -32,7 +32,7 @@ resource "aws_instance" "web" {
       curl localhost
       EOF
 
-    root_block_device {
+    root_block_device {    
       volume_size = 11
       encrypted   = true
     }
